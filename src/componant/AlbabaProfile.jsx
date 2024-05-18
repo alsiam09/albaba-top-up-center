@@ -4,7 +4,7 @@ import logo from '../assets/albabaLogo.png'
 const AlbabaProfile = () => {
   return (
     <div className="main">
-        <div className="imgBox relative h-[280px]">
+        <div className="imgBox lg:border-r-[3px]  border-r-[#fff] relative lg:pr-[20px] px-[10px] lg:pl-[0px] h-[280px]">
             <div className="coverImg overflow-hidden h-[200px]">
                 <img className='rounded-[10px]' src={cover} alt="" />
             </div>
