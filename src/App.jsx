@@ -1,0 +1,17 @@
+import './App.css'
+import { createBrowserRouter , createRoutesFromElements , Route , RouterProvider } from 'react-router-dom'
+import Home from './Page/Home'
+import RootLayOut from './componant/RootLayOut'
+
+function App() {
+  let Router = createBrowserRouter(createRoutesFromElements(
+    <Route element={<RootLayOut/>}>
+    <Route path='/' element={<Home/>}></Route>
+    </Route>
+  ))
+  return (
+    <RouterProvider router={Router}/>
+  )
+}
+
+export default App
