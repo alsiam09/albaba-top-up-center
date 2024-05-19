@@ -20,7 +20,7 @@ const AlbabaProfile = () => {
                 <img className='rounded-[10px]' src={cover} alt="" />
             </div>
             <div  className="logo w-[180px] h-[180px] bg-[#272727] p-[10px] rounded-[50%] absolute top-[100px] left-[20px]">
-                 {Img ? <img className='rounded-[60%] w-[170px] h-[160px] w-[160px] h-[170px]' src={URL.createObjectURL(Img)}/> :<img className=' w-[160px] h-[160px] rounded-[50%]' src={logo} alt="" />}
+                 {Img ? <img className='rounded-[60%] w-[160px] h-[160px] lg:h-[160px] lg:w-[160px]' src={URL.createObjectURL(Img)}/> :<img className=' h-[160px] w-[160px] lg:w-[160px] lg:h-[160px] rounded-[50%]' src={logo} alt="" />}
                 <div className="Active absolute left-[18px] bottom-[18px] w-[22px] h-[22px] rounded-[50%] bg-[green]"></div>
                 <label for="imgUp" className="Active absolute right-[1px] bottom-[20px] p-[10px] rounded-[50%] bg-[#272727] text-[#fff] text-[25px]"><IoIosCamera /></label>
             </div>
