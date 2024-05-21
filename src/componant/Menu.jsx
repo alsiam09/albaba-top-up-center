@@ -26,14 +26,14 @@ const Menu = () => {
                 <div className=' fixed w-[200px] lg:w-[300px]  duration-300 ease-in bg-[#000] h-[100%] top-[0px] right-0'>
                   <ul className='px-[10px] mt-[100px]'>
                   <Link to={'/'}><li className='text-[white] mb-[10px] text-[25px] lg:text-[30px] w-[100%] py-[5px] hover:bg-[#dbdbdb] hover:text-[#000] flex justify-start px-[20px] rounded-[20px] font-font-name'>Home</li></Link>  
-                  <li className='text-[white] mb-[10px] text-[25px] lg:text-[30px] w-[100%] py-[5px] hover:bg-[#dbdbdb] hover:text-[#000] flex justify-start px-[20px] rounded-[20px] font-font-name'>Order</li>
+                  <Link to={'/order'}> <li className='text-[white] mb-[10px] text-[25px] lg:text-[30px] w-[100%] py-[5px] hover:bg-[#dbdbdb] hover:text-[#000] flex justify-start px-[20px] rounded-[20px] font-font-name'>Order</li></Link>
                   <li className='text-[white] mb-[10px] text-[25px] lg:text-[30px] w-[100%] py-[5px] hover:bg-[#dbdbdb] hover:text-[#000] flex justify-start px-[20px] rounded-[20px] font-font-name'>About Us</li>
                   </ul>
                 </div> :
                 <div className=' fixed w-[200px] lg:w-[300px] bg-[#000] h-[100%] duration-300 ease-in top-[0px] right-[-200px] lg:right-[-300px]'>
                    <ul className='px-[10px] mt-[100px]'>
                   <Link to={'/'}><li className='text-[white] mb-[10px] text-[25px] lg:text-[30px] w-[100%] py-[5px] hover:bg-[#dbdbdb] hover:text-[#000] flex justify-start px-[20px] rounded-[20px] font-font-name'>Home</li></Link>  
-                  <li className='text-[white] mb-[10px] text-[25px] lg:text-[30px] w-[100%] py-[5px] hover:bg-[#dbdbdb] hover:text-[#000] flex justify-start px-[20px] rounded-[20px] font-font-name'>Order</li>
+                  <Link to={'/order'}> <li className='text-[white] mb-[10px] text-[25px] lg:text-[30px] w-[100%] py-[5px] hover:bg-[#dbdbdb] hover:text-[#000] flex justify-start px-[20px] rounded-[20px] font-font-name'>Order</li></Link>
                   <li className='text-[white] mb-[10px] text-[25px] lg:text-[30px] w-[100%] py-[5px] hover:bg-[#dbdbdb] hover:text-[#000] flex justify-start px-[20px] rounded-[20px] font-font-name'>About Us</li>
                   </ul>
                 </div>}
