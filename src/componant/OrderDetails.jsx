@@ -32,7 +32,7 @@ const OrderDetails = () => {
                     <span className='w-[25%] text-[15px] text-[#fff]'>your order is complete</span>
                 </div>
                 </div>
-                <div className="sm_order">
+                <div className="sm_order lg:hidden">
                 <div onClick={ClickOrder} className="item_box flex justify-between"> <span className=' flex items-center   text-[15px] text-[#fff]'>Order ID</span> <span className=' text-[15px] text-[#fff]'>158444</span></div>
                 {Order == true && 
                                 <div className="box">
