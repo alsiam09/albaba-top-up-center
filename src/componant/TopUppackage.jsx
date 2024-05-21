@@ -1,5 +1,6 @@
 import React from 'react'
 import banner from '../assets/cover2.png'
+import currency from '../assets/albc.png'
 const TopUppackage = () => {
   return (
     <section className='pt-[80px] pb-[30px py-[20px]] bg-[#201f1f]'>
@@ -21,8 +22,8 @@ const TopUppackage = () => {
                 <li className='hover:bg-[#fff] my-[5px] py-[20px] cursor-pointer  hover:text-[#000] relative w-[47%] rounded-[5px] lg:w-[32%] h-[30px] border-[white] border-[1px] text-[#fff] flex items-center justify-center text-[18px] font-[600]'><span>Mountly</span><span className='text-[red] text-[12px] bg-[#f5f5f5] px-[5px] rounded-[5px] absolute top-[-5px] right-[-5px] '>750৳</span></li>
                 <li className='hover:bg-[#fff] my-[5px] py-[20px] cursor-pointer  hover:text-[#000] relative w-[47%] rounded-[5px] lg:w-[32%] h-[30px] border-[white] border-[1px] text-[#fff] flex items-center justify-center text-[18px] font-[600]'><span>Level up pass</span><span className='text-[red] text-[12px] bg-[#f5f5f5] px-[5px] rounded-[5px] absolute top-[-5px] right-[-5px] '>155৳</span></li>
                 </ul>
-                <div className="price">
-                    <h2 className='text-[#fff] text-[25px] font-[700]'>Price :<span className='font-[400] text-[#d1d1d1]'>1480৳</span></h2>
+                <div className="price mt-[20px]">
+                    <h2 className=' flex items-center text-[#fff] text-[25px] font-[700]'>Price :<span className=' flex items-center font-[400] text-[#d1d1d1] ml-[10px]'>1480 <div className="icon ml-[5px]"><img className='w-[30px] h-[30px] rounded-[50%]' src={currency} alt="" /></div></span></h2>
                 </div>
                 <div className="PlayerID mt-[40px]">
                     <h2 className='text-[#fff] text-[25px] font-font-name'>Your account detail</h2>
