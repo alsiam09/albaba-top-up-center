@@ -3,7 +3,7 @@ import TopUppackage from '../componant/TopUppackage'
 
 const TopUpItem = () => {
   return (
-     <TopUppackage/>
+     <TopUppackage />
   )
 }
 
