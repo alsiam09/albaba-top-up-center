@@ -5,6 +5,7 @@ import RootLayOut from './componant/RootLayOut'
 import TopUpItem from './Page/TopUpItem'
 import Order from './Page/Order'
 import Loginpage from './Page/Loginpage'
+import CreateAcc from './Page/CreateAcc'
 
 function App() {
   let Router = createBrowserRouter(createRoutesFromElements(
@@ -13,6 +14,7 @@ function App() {
     <Route path='/TopUpItem' element={<TopUpItem/>}></Route>
     <Route path='/Order' element={<Order/>}></Route>
     <Route path='/Login' element={<Loginpage/>}></Route>
+    <Route path='/CreateAccount' element={<CreateAcc/>}></Route>
     </Route>
   ))
   return (

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { FaEye } from "react-icons/fa";
 import { IoMdEyeOff } from "react-icons/io";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     let [pass , setpass] = useState(false)
@@ -24,7 +25,7 @@ const Login = () => {
                 </div>
             </div>
             <div className="Create lg:w-[60%] mx-auto py-[30px] flex justify-center acoount">
-            <h2 className='w-[60%] h-[60px] bg-[#328621] my-[10px] rounded-[10px] flex justify-center items-center text-[20px] font-font-name text-[#fff]'>Google Login</h2>
+            <Link to={'/createAccount'} className='w-[60%] h-[60px] bg-[#328621] my-[10px] rounded-[10px] flex justify-center items-center text-[20px] font-font-name text-[#fff]'>Create New Account</Link>
             </div>
         </div>
     </section>
