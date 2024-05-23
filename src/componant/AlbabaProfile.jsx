@@ -33,7 +33,7 @@ const AlbabaProfile = () => {
         </div>
         <div className="MainBox">
         <div onClick={ClickSD} className=" userDetil my-[10px] rounded-[20px] border-[2px] items-center border-[#fff] w-[100%] h-[50px] flex justify-between px-[30px] bg-[#292929]">
-          <h2 className='userName text-[25px] text-[white] font-bold'>alsiam</h2>
+          <h2 className='userName text-[25px] text-[white] font-bold'>User Name</h2>
           {SD == true ?  <div className="icon text-[25px] text-white"><IoIosArrowUp /></div> :  <div className="icon text-[25px] text-white"><IoIosArrowDown/></div>}
         </div>
         {SD == true && 
