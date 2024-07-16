@@ -74,14 +74,11 @@ const [ Price , setPrice ] = useState('')
                 <div className="PlayerID mt-[40px]">
                     <h2 className='text-[#fff] text-[25px] font-font-name'>Your account detail</h2>
                     <div className="input">
-                    <input id='Uid' className=' outline-none pl-[10px] py-[7px] rounded-[5px] text-[16px] w-[200px] border-[1px] border-[#fff] text-[#fff] bg-[#201f1f] mb-[10px] block' type="text" placeholder='Enter Your UID'/>
-                    <input id='Uid' className=' outline-none pl-[10px] py-[7px] rounded-[5px] text-[16px] w-[200px] border-[1px] border-[#fff] text-[#fff] bg-[#201f1f] block' type="text" placeholder='Account Name'/>
+                    <input id='Uid' className=' outline-none pl-[10px] py-[7px] rounded-[5px] text-[16px] w-[100%] lg:w-[400px] md:w-[100%] border-[1px] border-[#fff] text-[#fff] bg-[#201f1f] mb-[10px] block' type="text" placeholder='Enter Your UID'/>
+                    <input id='Uid' className=' outline-none pl-[10px] py-[7px] rounded-[5px] text-[16px] w-[100%] lg:w-[400px] md:w-[100%] border-[1px] border-[#fff] text-[#fff] bg-[#201f1f] block' type="text" placeholder='Account Name'/>
                     </div>
                 </div>
-                <div className="payItems flex justify-between mt-[30px]">
-                    <h2 className='w-[48%] h-[40px] flex justify-center text-[#fff] text-[20px] items-center border-[2px] rounded-[10px] border-[#fff]'>Mobile Bank</h2>
-                    <h2 className='w-[48%] h-[40px] flex justify-center text-[#fff] text-[20px] items-center border-[2px] rounded-[10px] border-[#fff]'>Blance <img className='h-[30px] w=[30px]' src={currency} alt="" /></h2>
-                </div>
+              
                <a href="https://www.facebook.com/profile.php?id=61558573224947&mibextid=ZbWKwL"> <span className=' rounded-[10px] my-[30px] w-[100%] h-[30px] py-[20px] bg-[red] text-[#fff] text-[20px] font-[500] flex justify-center items-center '>Pay Now</span></a>
                 </div>
             </div>
