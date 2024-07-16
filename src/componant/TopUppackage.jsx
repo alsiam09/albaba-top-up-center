@@ -1,7 +1,59 @@
-import React from 'react'
+import React, { useState } from 'react'
 import banner from '../assets/cover2.png'
 import currency from '../assets/albc.png'
-const TopUppackage = () => {
+import { FaHandsHelping } from 'react-icons/fa';
+const TopUppackage = ({}) => {
+
+let DataPacking = [
+    {
+        tital: "25 Dimond",
+        price: "19",
+    },
+    {
+        tital: "50 Dimond",
+        price: "35",
+    },
+    {
+        tital: "115 Dimond",
+        price: "75",
+    },
+    {
+        tital: "240 Dimond",
+        price: "160",
+    },
+    {
+        tital: "610 Dimond",
+        price: "370",
+    },
+    {
+        tital: "1240 Dimond",
+        price: "750",
+    },
+    {
+        tital: "2530 Dimond",
+        price: "1500",
+    },
+    {
+        tital: "Weekly",
+        price: "155",
+    },
+    {
+        tital: "Mountly",
+        price: "750",
+    },
+    {
+        tital: "Level up pass",
+        price: "155",
+    },
+]    
+
+let HandlePrice = (item) => {
+    setPrice(item.price);
+}
+const [ Price , setPrice ] = useState('')
+  
+
+
   return (
     <section className='pt-[80px] pb-[30px py-[20px]] bg-[#201f1f]'>
         <div className="container mx-auto">
@@ -10,20 +62,14 @@ const TopUppackage = () => {
             </div>
             <div className="ByeItem flex justify-center">
                 <div className="package lg:w-[60%] p-[10px]">
-                <ul className="  flex-wrap flex justify-between  ">
-                <li className='hover:bg-[#fff] my-[5px] py-[20px] cursor-pointer  hover:text-[#000] relative w-[47%] rounded-[5px] lg:w-[32%] h-[30px] border-[white] border-[1px] text-[#fff] flex items-center justify-center text-[18px] font-[600]'><span>25 Dimond</span><span className='text-[red] text-[12px] bg-[#f5f5f5] px-[5px] rounded-[5px] absolute top-[-5px] right-[-5px] '>19৳</span></li>
-                <li className='hover:bg-[#fff] my-[5px] py-[20px] cursor-pointer  hover:text-[#000] relative w-[47%] rounded-[5px] lg:w-[32%] h-[30px] border-[white] border-[1px] text-[#fff] flex items-center justify-center text-[18px] font-[600]'><span>50 Dimond</span><span className='text-[red] text-[12px] bg-[#f5f5f5] px-[5px] rounded-[5px] absolute top-[-5px] right-[-5px] '>35৳</span></li>
-                <li className='hover:bg-[#fff] my-[5px] py-[20px] cursor-pointer  hover:text-[#000] relative w-[47%] rounded-[5px] lg:w-[32%] h-[30px] border-[white] border-[1px] text-[#fff] flex items-center justify-center text-[18px] font-[600]'><span>115 Dimond</span><span className='text-[red] text-[12px] bg-[#f5f5f5] px-[5px] rounded-[5px] absolute top-[-5px] right-[-5px] '>75৳</span></li>
-                <li className='hover:bg-[#fff] my-[5px] py-[20px] cursor-pointer  hover:text-[#000] relative w-[47%] rounded-[5px] lg:w-[32%] h-[30px] border-[white] border-[1px] text-[#fff] flex items-center justify-center text-[18px] font-[600]'><span>240 Dimond</span><span className='text-[red] text-[12px] bg-[#f5f5f5] px-[5px] rounded-[5px] absolute top-[-5px] right-[-5px] '>155৳</span></li>
-                <li className='hover:bg-[#fff] my-[5px] py-[20px] cursor-pointer  hover:text-[#000] relative w-[47%] rounded-[5px] lg:w-[32%] h-[30px] border-[white] border-[1px] text-[#fff] flex items-center justify-center text-[18px] font-[600]'><span>610  Dimond</span><span className='text-[red] text-[12px] bg-[#f5f5f5] px-[5px] rounded-[5px] absolute top-[-5px] right-[-5px] '>370৳</span></li>
-                <li className='hover:bg-[#fff] my-[5px] py-[20px] cursor-pointer hover:text-[#000] relative w-[47%] rounded-[5px] lg:w-[32%] h-[30px] border-[white] border-[1px] text-[#fff] flex items-center justify-center text-[18px] font-[600]'><span>1240 Dimond</span><span className='text-[red] text-[12px] bg-[#f5f5f5] px-[5px] rounded-[5px] absolute top-[-5px] right-[-5px] '>750৳</span></li>
-                <li className='hover:bg-[#fff] my-[5px] py-[20px] cursor-pointer  hover:text-[#000] relative w-[47%] rounded-[5px] lg:w-[32%] h-[30px] border-[white] border-[1px] text-[#fff] flex items-center justify-center text-[18px] font-[600]'><span>2530 Dimond</span><span className='text-[red] text-[12px] bg-[#f5f5f5] px-[5px] rounded-[5px] absolute top-[-5px] right-[-5px] '>1480৳</span></li>
-                <li className='hover:bg-[#fff] my-[5px] py-[20px] cursor-pointer  hover:text-[#000] relative w-[47%] rounded-[5px] lg:w-[32%] h-[30px] border-[white] border-[1px] text-[#fff] flex items-center justify-center text-[18px] font-[600]'><span>Weekly</span><span className='text-[red] text-[12px] bg-[#f5f5f5] px-[5px] rounded-[5px] absolute top-[-5px] right-[-5px] '>155৳</span></li>
-                <li className='hover:bg-[#fff] my-[5px] py-[20px] cursor-pointer  hover:text-[#000] relative w-[47%] rounded-[5px] lg:w-[32%] h-[30px] border-[white] border-[1px] text-[#fff] flex items-center justify-center text-[18px] font-[600]'><span>Mountly</span><span className='text-[red] text-[12px] bg-[#f5f5f5] px-[5px] rounded-[5px] absolute top-[-5px] right-[-5px] '>750৳</span></li>
-                <li className='hover:bg-[#fff] my-[5px] py-[20px] cursor-pointer  hover:text-[#000] relative w-[47%] rounded-[5px] lg:w-[32%] h-[30px] border-[white] border-[1px] text-[#fff] flex items-center justify-center text-[18px] font-[600]'><span>Level up pass</span><span className='text-[red] text-[12px] bg-[#f5f5f5] px-[5px] rounded-[5px] absolute top-[-5px] right-[-5px] '>155৳</span></li>
+                <ul className=" flex flex-wrap gap-x-2 items-center">
+                {DataPacking.map((item)=>(
+                      <li onClick={()=>HandlePrice(item)} className='hover:bg-[#fff] my-[5px] py-[20px] cursor-pointer  hover:text-[#000] relative w-[47%] rounded-[5px] lg:w-[32%] h-[30px] border-[white] border-[1px] text-[#fff] flex items-center justify-center text-[18px] font-[600]'><span>{item.tital}</span><span className='text-[red] text-[12px] bg-[#f5f5f5] px-[5px] rounded-[5px] absolute top-[-5px] right-[-5px] '>{item.price}৳</span></li>
+                ))}
                 </ul>
+
                 <div className="price mt-[20px]">
-                    <h2 className=' flex items-center text-[#fff] text-[25px] font-[700]'>Price :<span className=' flex items-center font-[400] text-[#d1d1d1] ml-[10px]'>1480 <div className="icon ml-[5px]"><img className='w-[30px] h-[30px] rounded-[50%]' src={currency} alt="" /></div></span></h2>
+                    <h2 className=' flex items-center text-[#fff] text-[25px] font-[700]'>Price :<span className=' flex items-center font-[400] text-[#d1d1d1] ml-[10px]'>{Price}<div className="icon ml-[5px]">৳</div></span></h2>
                 </div>
                 <div className="PlayerID mt-[40px]">
                     <h2 className='text-[#fff] text-[25px] font-font-name'>Your account detail</h2>
