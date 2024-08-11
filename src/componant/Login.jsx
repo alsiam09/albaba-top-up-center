@@ -15,6 +15,8 @@ const Login = () => {
     }
     let [ password , SetPassword ] = useState('')
     let [ email , SetEmail ] = useState('')
+
+    
     let handleEmail = (e) => {
         SetEmail(e.target.value)
     }
@@ -26,7 +28,8 @@ const Login = () => {
         signInWithEmailAndPassword(auth, email, password)
         .then((user) => {
           console.log(user);
-        }).then(()=>{
+        })
+        .then(()=>{
             setTimeout(()=>{
                 navigate('/')
             },500)

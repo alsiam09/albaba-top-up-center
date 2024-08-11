@@ -11,7 +11,7 @@ const CreateAccFrom = () => {
     const auth = getAuth();
     const dataBass = getDatabase();
     const useritem = auth.currentUser;
-
+    let navigate = useNavigate()
     let [ name , SetName ] = useState('')
     let [ number , SetNumber ] = useState('')
     let [ password , SetPassword ] = useState('')
@@ -39,7 +39,7 @@ const CreateAccFrom = () => {
         .then(()=>{
             updateProfile(auth.currentUser, {
                 displayName: name,
-                phoneNumber: number,
+                Number: number,
               })
         })
         .then(() => {
@@ -48,6 +48,9 @@ const CreateAccFrom = () => {
                 username: name,
                 userphonenumber: number,
               });
+          })
+          .then(()=>{
+            navigate('/Login')
           })
         .catch((error) => {
           const errorCode = error.code;
