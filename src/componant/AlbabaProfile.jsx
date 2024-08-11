@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import cover from '../assets/cover.jpg'
 import currency from '../assets/albc.png'
 import logo from '../assets/albabaLogo.png'
 import { IoIosArrowDown ,IoIosArrowUp , IoIosCamera  } from "react-icons/io";
 const AlbabaProfile = () => {
+  const database = getDatabase();
   let [SD , setSD] = useState(false)
   let ClickSD =()=>{
     setSD(!SD)
@@ -18,6 +19,11 @@ const AlbabaProfile = () => {
   let ClickBlance =()=>{
     setBlance(!Blance)
   }
+  
+  let [ name , SetName ] = useState('')
+  let [ number , SetNumber ] = useState('')
+
+
   return (
     <div className="main lg:border-r-[3px] lg:pr-[20px] px-[10px] lg:pl-[0px] border-r-[#fff]">
         <div className="imgBox  relative  h-[280px]">
