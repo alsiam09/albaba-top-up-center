@@ -4,11 +4,12 @@ import { FaEye } from "react-icons/fa";
 import { IoMdEyeOff } from "react-icons/io";
 import { Link, useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword , signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
     const auth = getAuth();
+    const provider = new GoogleAuthProvider();
     let navigate = useNavigate()
     let [pass , setpass] = useState(false)
     let hender = () =>{
@@ -43,6 +44,34 @@ const Login = () => {
             seterror(true)
         });
     }
+    let LoginGoogle = () => {
+        signInWithPopup(auth, provider)
+        .then((result) => {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+          // The signed-in user info.
+          const user = result.user;
+          // IdP data available using getAdditionalUserInfo(result)
+          // ...
+        })
+        .then(()=>{
+            toast('success')
+            setTimeout(()=>{
+                navigate('/')
+            },1000)
+        })
+        .catch((error) => {
+          // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // The email of the user's account used.
+          const email = error.customData.email;
+          // The AuthCredential type that was used.
+          const credential = GoogleAuthProvider.credentialFromError(error);
+          // ...
+        });
+    }
   return (
     <section className='bg-[#201f1f]'>
         <div className="container px-[10px] py-[90px] mx-auto">
@@ -69,7 +98,7 @@ theme="light"
                     </div>
                     <h2 onClick={handlelogin} className='w-[100%] h-[50px] bg-[red] my-[10px] rounded-[10px] flex justify-center items-center text-[20px] font-font-name text-[#fff]'>Login</h2>
                     </form>
-                    <h2 className='w-[100%] h-[50px] bg-[#ffc7c7] my-[10px] rounded-[10px] flex justify-center items-center text-[20px] font-font-name text-[#000]'>Google Login</h2>
+                    <h2 onClick={LoginGoogle} className='w-[100%] h-[50px] bg-[#ffc7c7] my-[10px] rounded-[10px] flex justify-center items-center text-[20px] font-font-name text-[#000]'>Google Login</h2>
                     <span className= ' pt-[20px] flex justify-center text-[18px] text-[#fff]'>Forget Password</span>
                 </div>
             </div>

@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react'
 import { FaBars } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import AlbabaProfile from './AlbabaProfile';
 const Menu = () => {
   let [Menu , setMenu ] = useState(false)
   let MenuRef = useRef()
+  
   useState(()=>{
     document.addEventListener("click" , (e)=>{
       if (MenuRef.current.contains(e.target) == true) {

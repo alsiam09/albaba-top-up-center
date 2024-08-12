@@ -3,7 +3,7 @@ import HomeBody from '../componant/HomeBody'
 
 const Home = () => {
   return (
-    <HomeBody/>
+    <HomeBody />
   )
 }
 

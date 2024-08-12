@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import cover from '../assets/cover.jpg'
+import Logo from '../assets/albabaLogo.png'
 import currency from '../assets/albc.png'
-import logo from '../assets/albabaLogo.png'
 import { IoIosArrowDown ,IoIosArrowUp , IoIosCamera  } from "react-icons/io";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 const AlbabaProfile = () => {
@@ -10,6 +10,7 @@ const AlbabaProfile = () => {
   let ClickSD =()=>{
     setSD(!SD)
   }
+  
   let [Img , SetImg] = useState()
   let ImgChang = (event) =>{
     const file = event.target.files[0]
@@ -23,6 +24,11 @@ const AlbabaProfile = () => {
   
   let [ name , SetName ] = useState('')
   let [ number , SetNumber ] = useState('')
+  let [ proimg , setproimg ] = useState('')
+  let [ emailVerifiedp , SetemailVerified ] = useState('')
+
+
+  
   useEffect(()=>{
     onAuthStateChanged(auth, (user) => {
       console.log(user);
@@ -34,6 +40,8 @@ const AlbabaProfile = () => {
         
         SetName(user.displayName);
         SetNumber(user.uid);
+        setproimg(user.photoURL)
+        SetemailVerified(user.emailVerified)
         // ...
       } else {
         // User is signed out
@@ -41,8 +49,7 @@ const AlbabaProfile = () => {
       }
     });
   })
-  console.log(name);
-  console.log(number);
+
   
   
   return (
@@ -52,7 +59,7 @@ const AlbabaProfile = () => {
                 <img className='rounded-[10px]' src={cover} alt="" />
             </div>
             <div  className="logo w-[180px] h-[180px] bg-[#272727] p-[10px] rounded-[50%] absolute top-[100px] left-[20px]">
-                 {Img ? <img className='rounded-[60%] w-[160px] h-[160px] lg:h-[160px] lg:w-[160px]' src={URL.createObjectURL(Img)}/> :<img className=' h-[160px] w-[160px] lg:w-[160px] lg:h-[160px] rounded-[50%]' src={logo} alt="" />}
+                 {proimg === null  ? <img className='rounded-[60%] w-[160px] h-[160px] lg:h-[160px] lg:w-[160px]' src={Logo}/> :<img className=' h-[160px] w-[160px] lg:w-[160px] lg:h-[160px] rounded-[50%]' src={proimg} alt="" />}
                 <div className="Active absolute left-[18px] bottom-[18px] w-[22px] h-[22px] rounded-[50%] bg-[green]"></div>
                 <label for="imgUp" className="Active absolute right-[1px] bottom-[20px] p-[10px] rounded-[50%] bg-[#272727] text-[#fff] text-[25px]"><IoIosCamera /></label>
             </div>
@@ -74,4 +81,4 @@ const AlbabaProfile = () => {
   )
 }
 
-export default AlbabaProfile
+export default AlbabaProfile 

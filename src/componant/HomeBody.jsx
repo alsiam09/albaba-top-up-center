@@ -6,7 +6,7 @@ const HomeBody = () => {
   return (
     <section className='py-[20px] pt-[90px] bg-[#201f1f]'>
         <div className="container mx-auto lg:flex justify-between">
-            <div className="albabaProfile lg:w-[45%]"><AlbabaProfile/></div>
+            <div className="albabaProfile lg:w-[45%]"><AlbabaProfile /></div>
             <div className="TopUPItem lg:w-[55%] px-[10px]"><TopUpProdect/></div>
         </div>
     </section>

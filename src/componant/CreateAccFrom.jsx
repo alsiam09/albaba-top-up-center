@@ -54,7 +54,7 @@ const CreateAccFrom = () => {
             toast("Sign up success")
             setTimeout(()=>{
               navigate('/Login')
-            },500)
+            },1000)
           })
         .catch((error) => {
           const errorCode = error.code;
