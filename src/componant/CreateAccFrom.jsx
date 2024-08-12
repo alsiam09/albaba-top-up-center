@@ -6,7 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { FaBackspace } from "react-icons/fa";
 import { getAuth, createUserWithEmailAndPassword , updateProfile } from "firebase/auth";
 import { getDatabase, ref, set } from "firebase/database";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const CreateAccFrom = () => {
     const auth = getAuth();
     const dataBass = getDatabase();
@@ -50,7 +51,10 @@ const CreateAccFrom = () => {
               });
           })
           .then(()=>{
-            navigate('/Login')
+            toast("Sign up success")
+            setTimeout(()=>{
+              navigate('/Login')
+            },500)
           })
         .catch((error) => {
           const errorCode = error.code;
@@ -68,6 +72,18 @@ const CreateAccFrom = () => {
   return (
     <section className='bg-[#201f1f]'>
     <div className="container px-[10px] py-[90px] mx-auto">
+    <ToastContainer
+position="top-center"
+autoClose={500}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
         <div className="LoGBox mx-auto lg:w-[600px]">
             <h1 className=' flex items-center justify-between px-[20px] text-[#fff] text-[25px] font-font-name w-[100%] h-[60px] bg-[#2e5712]'><span> Creat a Account </span><Link to={'/Login'}><FaBackspace/></Link></h1>
             <div className="LogD p-[20px]">
