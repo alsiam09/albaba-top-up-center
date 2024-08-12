@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
+    
     let navigate = useNavigate()
     let [pass , setpass] = useState(false)
     let hender = () =>{
