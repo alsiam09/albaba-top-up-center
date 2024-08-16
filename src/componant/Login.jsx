@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword , signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+
 const Login = () => {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
@@ -39,6 +41,7 @@ const Login = () => {
                 navigate('/')
             },1000)
         })
+        
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;

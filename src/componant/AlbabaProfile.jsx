@@ -3,9 +3,13 @@ import cover from '../assets/cover.jpg'
 import Logo from '../assets/albabaLogo.png'
 import currency from '../assets/albc.png'
 import { IoIosArrowDown ,IoIosArrowUp , IoIosCamera  } from "react-icons/io";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged , signOut } from "firebase/auth";
+import { useDispatch, useSelector } from 'react-redux';
+import { signin } from './docmentslice';
+
 const AlbabaProfile = () => {
   const auth = getAuth();
+  let dispatch = useDispatch()
   let [SD , setSD] = useState(false)
   let ClickSD =()=>{
     setSD(!SD)
@@ -27,27 +31,38 @@ const AlbabaProfile = () => {
   let [ proimg , setproimg ] = useState('')
   let [ emailVerifiedp , SetemailVerified ] = useState('')
 
+  let Data = useSelector((state)=> state.docmentslice.userid)
+
+  console.log(Data);
+  
 
   
   useEffect(()=>{
+    
     onAuthStateChanged(auth, (user) => {
-      console.log(user);
-
+      console.log(emailVerifiedp);
+      dispatch(signin(emailVerifiedp))
       if (user) {
         
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/auth.user
         
-        SetName(user.displayName);
-        SetNumber(user.uid);
-        setproimg(user.photoURL)
-        SetemailVerified(user.emailVerified)
+          SetName(user.displayName);
+          SetNumber(user.uid);
+          setproimg(user.photoURL)          
+          SetemailVerified(user.emailVerified)          
+     
+
         // ...
       } else {
-        // User is signed out
-        // ...
+        SetName("");
+          SetNumber("");
+          setproimg("")          
+          SetemailVerified("")  
       }
     });
+
+      
   })
 
   

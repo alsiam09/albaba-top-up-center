@@ -1,10 +1,35 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FaBars } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import AlbabaProfile from './AlbabaProfile';
+import { useDispatch, useSelector } from 'react-redux';
+import { signin } from './docmentslice';
+import { getAuth, signOut } from "firebase/auth";
+
 const Menu = () => {
   let [Menu , setMenu ] = useState(false)
+  let dispatch = useDispatch()
+  const auth = getAuth();
+
   let MenuRef = useRef()
+  let LoginData = useSelector((state)=> state.docmentslice.userid)
+  let [ login , setlogin ] = useState('')
+
+  console.log(LoginData);
+  
+  let handlelogout = () =>{
+    signOut(auth).then(() => {
+      console.log('done');
+      
+    }).catch((error) => {
+      console.log(error);
+      
+    });
+      
+  }
+ 
+  console.log(LoginData);
+  
   
   useState(()=>{
     document.addEventListener("click" , (e)=>{
@@ -31,14 +56,14 @@ const Menu = () => {
                   <Link to={'/order'}> <li className='text-[white] mb-[10px] text-[25px] lg:text-[30px] w-[100%] py-[5px] hover:bg-[#dbdbdb] hover:text-[#000] flex justify-start px-[20px] rounded-[20px] font-font-name'>Order</li></Link>
                   <li className='text-[white] mb-[10px] text-[25px] lg:text-[30px] w-[100%] py-[5px] hover:bg-[#dbdbdb] hover:text-[#000] flex justify-start px-[20px] rounded-[20px] font-font-name'>About Us</li>
                   </ul>
-                  <Link to={'/Login'}> <li className='text-[25px] text-[#fff] font-font-name list-none absolute bottom-[60px] left-[50%] translate-x-[-50%] py-[8px] px-[26px] bg-[red] rounded-[20px]'>Login</li></Link>
+                  {LoginData === true ?<li onClick={handlelogout} className='text-[25px] text-[#fff] font-font-name list-none absolute bottom-[60px] left-[50%] translate-x-[-50%] py-[8px] px-[26px] bg-[red] rounded-[20px]'>Logout</li>:<Link to={'/Login'}> <li className='text-[25px] text-[#fff] font-font-name list-none absolute bottom-[60px] left-[50%] translate-x-[-50%] py-[8px] px-[26px] bg-[red] rounded-[20px]'>Login</li></Link>}
                 </div> :
                 <div className=' fixed w-[200px] lg:w-[300px] bg-[#000] h-[100%] duration-300 ease-in top-[0px] right-[-200px] lg:right-[-300px]'>
                    <ul className='px-[10px] mt-[100px]'>
                   <Link to={'/'}><li className='text-[white] mb-[10px] text-[25px] lg:text-[30px] w-[100%] py-[5px] hover:bg-[#dbdbdb] hover:text-[#000] flex justify-start px-[20px] rounded-[20px] font-font-name'>Home</li></Link>  
                   <Link to={'/order'}> <li className='text-[white] mb-[10px] text-[25px] lg:text-[30px] w-[100%] py-[5px] hover:bg-[#dbdbdb] hover:text-[#000] flex justify-start px-[20px] rounded-[20px] font-font-name'>Order</li></Link>
                   <li className='text-[white] mb-[10px] text-[25px] lg:text-[30px] w-[100%] py-[5px] hover:bg-[#dbdbdb] hover:text-[#000] flex justify-start px-[20px] rounded-[20px] font-font-name'>About Us</li>
-                  <Link to={'/Login'}> <li className='text-[25px] text-[#fff] font-font-name list-none absolute bottom-[60px] left-[50%] translate-x-[-50%] py-[8px] px-[26px] bg-[red] rounded-[20px]'>Login</li></Link>
+                  {LoginData === true ?<li onClick={handlelogout} className='text-[25px] text-[#fff] font-font-name list-none absolute bottom-[60px] left-[50%] translate-x-[-50%] py-[8px] px-[26px] bg-[red] rounded-[20px]'>Logout</li>:<Link to={'/Login'}> <li className='text-[25px] text-[#fff] font-font-name list-none absolute bottom-[60px] left-[50%] translate-x-[-50%] py-[8px] px-[26px] bg-[red] rounded-[20px]'>Login</li></Link>}
                   </ul>
                 </div>}
         </div>
